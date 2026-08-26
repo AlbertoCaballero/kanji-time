@@ -58,6 +58,17 @@ Each entry:
 - Language only affects the UI for v1; meaning-language switching is a v2 data
   concern.
 
+## Custom kanji
+
+- Users can add kanji manually (kanji, reading, meaning) or import a JSON file
+  via the Storage Access Framework (no permissions required).
+- Custom entries are stored in the app's private storage (`custom_kanji.json`),
+  merged with the bundled set. A custom entry with the same kanji overrides the
+  bundled one.
+- Long-press a custom entry to remove it.
+- Any change triggers an immediate widget refresh; rotation draws from the
+  merged set.
+
 ## Out of scope for v1
 
 - Spanish meanings (reserved for a future data source/translation).

@@ -1,9 +1,6 @@
 package com.caballero.kanjitime
 
-import kotlin.random.Random
 import org.junit.Assert.assertEquals
-import org.junit.Assert.assertNotEquals
-import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class KanjiRepositoryTest {
@@ -25,19 +22,19 @@ class KanjiRepositoryTest {
     }
 
     @Test
-    fun `pickIndex never repeats the last shown index`() {
-        val random = Random(42)
-        repeat(200) {
-            val size = 5
-            val last = random.nextInt(size)
-            val picked = KanjiRepository.pickIndex(size, last, random)
-            assertNotEquals(last, picked)
-            assertTrue(picked in 0 until size)
-        }
+    fun `merged keeps bundled order and appends new custom entries`() {
+        val bundled = KanjiParser.parse(sampleJson)
+        val custom = listOf(KanjiEntry("犬", "inu", "dog"), KanjiEntry("猫", "neko", "cat"))
+        val merged = KanjiRepository.merged(bundled, custom)
+        assertEquals(listOf("水", "山", "火", "犬", "猫"), merged.map { it.kanji })
     }
 
     @Test
-    fun `pickIndex handles a single entry`() {
-        assertEquals(0, KanjiRepository.pickIndex(1, 0, Random(0)))
+    fun `merged lets custom entries override bundled ones with the same kanji`() {
+        val bundled = KanjiParser.parse(sampleJson)
+        val custom = listOf(KanjiEntry("水", "mizu", "water, fluid"))
+        val merged = KanjiRepository.merged(bundled, custom)
+        assertEquals(3, merged.size)
+        assertEquals(KanjiEntry("水", "mizu", "water, fluid"), merged[0])
     }
 }

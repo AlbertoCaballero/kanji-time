@@ -95,5 +95,80 @@
             android:layout_marginTop="8dp"
             android:text="@string/language_note"
             android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/custom_title"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/custom_note"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/custom_import"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/custom_import" />
+
+        <EditText
+            android:id="@+id/edit_kanji"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="@string/custom_hint_kanji"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:maxLength="8"
+            android:maxLines="1" />
+
+        <EditText
+            android:id="@+id/edit_reading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/custom_hint_reading"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:maxLines="1" />
+
+        <EditText
+            android:id="@+id/edit_meaning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/custom_hint_meaning"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:maxLines="1" />
+
+        <Button
+            android:id="@+id/custom_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/custom_add" />
+
+        <TextView
+            android:id="@+id/custom_list_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/custom_list_label"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:id="@+id/custom_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="vertical" />
     </LinearLayout>
 </ScrollView>

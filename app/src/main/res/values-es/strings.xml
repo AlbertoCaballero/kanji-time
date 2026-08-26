@@ -16,4 +16,30 @@
     <string name="language_english">Inglés</string>
     <string name="language_spanish">Español</string>
     <string name="language_note">El cambio del idioma del significado llegará con los datos en español en una futura actualización.</string>
+
+    <string name="custom_title">Kanji personalizados</string>
+    <string name="custom_note">Añade tus propios kanji o impórtalos desde un archivo JSON. Las entradas personalizadas se combinan con el conjunto integrado. Formato: [{ "kanji": "…", "reading": "…", "meaning": "…" }, …]</string>
+    <string name="custom_import">Importar JSON</string>
+    <string name="custom_hint_kanji">Kanji</string>
+    <string name="custom_hint_reading">Lectura</string>
+    <string name="custom_hint_meaning">Significado</string>
+    <string name="custom_add">Añadir</string>
+    <string name="custom_list_label">Tus kanji (mantén pulsado para eliminar)</string>
+    <string name="custom_required">Se requieren kanji, lectura y significado.</string>
+    <string name="custom_added">Añadido %1$s.</string>
+    <string name="custom_updated">Actualizado %1$s.</string>
+    <string name="custom_import_error">No se pudo leer el archivo como JSON.</string>
+    <string name="custom_remove_title">¿Eliminar kanji?</string>
+    <string name="custom_remove_message">¿Eliminar %1$s de tu lista personalizada?</string>
+    <string name="custom_remove">Eliminar</string>
+    <string name="custom_cancel">Cancelar</string>
+    <string name="custom_removed">Eliminado %1$s.</string>
+    <string name="custom_empty">Aún no hay kanji personalizados.</string>
+    <string name="custom_row">%1$s — %2$s (%3$s)</string>
+
+    <plurals name="custom_imported_count">
+        <item quantity="one">Se importó %1$d kanji.</item>
+        <item quantity="many">Se importaron %1$d kanji.</item>
+        <item quantity="other">Se importaron %1$d kanji.</item>
+    </plurals>
 </resources>

@@ -12,6 +12,9 @@ pronunciation and meaning.
 - Changes to a new kanji every hour by default. Adjustable to 2, 6, 12 or
   24 hours from the settings screen.
 - Random kanji per widget instance, never repeating the same one twice in a row.
+- Add your own kanji: import a JSON file or type kanji, reading and meaning in
+  the settings screen. Custom entries merge with the built-in set (same kanji
+  overrides the built-in meaning).
 - Curated starter set of ~80 common kanji (English meanings), bundled offline.
 - No network access, no accounts, no third-party libraries.
 
@@ -40,6 +43,20 @@ sdk.dir=/path/to/android-sdk
 2. Long-press the home screen and pick **Kanji Time** from the widgets.
 
 The widget will pick a new kanji on every update. Tapping it opens the app.
+
+### Custom kanji
+
+In the settings screen you can add kanji individually or import a JSON file
+(a plain array of objects). Long-press any entry in the list to remove it.
+
+```json
+[
+  { "kanji": "爽", "reading": "sou", "meaning": "refreshing, clear" }
+]
+```
+
+Custom entries are stored in the app's private storage and merged with the
+built-in set. Importing the same kanji again overwrites its reading/meaning.
 
 ## Project layout
 

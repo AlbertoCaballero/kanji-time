@@ -99,6 +99,9 @@ git init && git add -A && git commit -m "Initial commit"
   (`{ kanji, reading, meaning }`, English).
 - `KanjiRepository`: lazy-load JSON, parse into data class, expose `random()`
   (avoid repeating the last shown kanji per widget instance via `SharedPreferences`).
+- `CustomKanjiStore`: user-added entries persisted to `custom_kanji.json` in app
+  files; manual add/remove and JSON import (SAF); merged with the bundled set
+  in `KanjiRepository.merged` (custom overrides bundled on kanji match).
 
 ### Phase 3 — Widget
 

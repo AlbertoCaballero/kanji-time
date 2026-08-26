@@ -30,29 +30,35 @@ class KanjiRepository(context: Context) {
     private val prefs: SharedPreferences =
         context.applicationContext.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
 
-    private val entries: List<KanjiEntry> by lazy {
+    private val bundled: List<KanjiEntry> by lazy {
         val json = context.assets.open(KANJI_ASSET).bufferedReader().use { it.readText() }
         KanjiParser.parse(json)
     }
 
+    private val custom = CustomKanjiStore(context)
+
+    fun allEntries(): List<KanjiEntry> = merged(bundled, custom.all())
+
     fun randomEntry(widgetId: Int, random: Random = Random.Default): KanjiEntry {
-        val last = prefs.getInt(KEY_LAST_INDEX + widgetId, NO_INDEX)
-        val index = pickIndex(entries.size, last, random)
-        prefs.edit().putInt(KEY_LAST_INDEX + widgetId, index).apply()
-        return entries[index]
+        val all = allEntries()
+        if (all.isEmpty()) return KanjiEntry("?", "?", "?")
+        val last = prefs.getString(KEY_LAST_KANJI + widgetId, null)
+        var index = random.nextInt(all.size)
+        if (all.size > 1 && all[index].kanji == last) index = (index + 1) % all.size
+        prefs.edit().putString(KEY_LAST_KANJI + widgetId, all[index].kanji).apply()
+        return all[index]
     }
 
     companion object {
         private const val PREFS_NAME = "kanji_time"
-        private const val KEY_LAST_INDEX = "last_index_"
-        private const val NO_INDEX = -1
+        private const val KEY_LAST_KANJI = "last_kanji_"
         private const val KANJI_ASSET = "kanji.json"
 
-        internal fun pickIndex(size: Int, last: Int, random: Random): Int {
-            if (size <= 1) return 0
-            var index = random.nextInt(size)
-            if (index == last) index = (index + 1) % size
-            return index
+        internal fun merged(bundled: List<KanjiEntry>, custom: List<KanjiEntry>): List<KanjiEntry> {
+            val byKanji = LinkedHashMap<String, KanjiEntry>()
+            for (entry in bundled) byKanji[entry.kanji] = entry
+            for (entry in custom) byKanji[entry.kanji] = entry
+            return byKanji.values.toList()
         }
     }
 }

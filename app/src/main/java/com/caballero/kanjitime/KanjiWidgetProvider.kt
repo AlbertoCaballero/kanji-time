@@ -85,7 +85,12 @@ class KanjiWidgetProvider : AppWidgetProvider() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
                 manager.updateAppWidgetProviderInfo(component, metaDataKey(intervalMs))
             }
+            requestWidgetRefresh(context)
+        }
 
+        fun requestWidgetRefresh(context: Context) {
+            val manager = AppWidgetManager.getInstance(context)
+            val component = ComponentName(context, KanjiWidgetProvider::class.java)
             val ids = manager.getAppWidgetIds(component)
             val intent = Intent(AppWidgetManager.ACTION_APPWIDGET_UPDATE, Uri.EMPTY)
                 .setPackage(context.packageName)
