@@ -3,6 +3,9 @@
 A simple open source Android home screen widget that shows a unique kanji, its
 pronunciation and meaning.
 
+![Widget Screenshot](./samples/cana-flower.jpg)
+![Widget Screenshot](./samples/config.jpg)
+
 ## Features
 
 - Minimalist 2x4 home screen widget: large kanji on the left, reading and
