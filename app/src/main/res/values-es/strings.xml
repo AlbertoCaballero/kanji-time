@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Kanji Time</string>
+    <string name="widget_name">Kanji Time</string>
+    <string name="widget_description">Muestra un kanji, su lectura y su significado.</string>
+    <string name="widget_kanji_description">%1$s, se pronuncia %2$s, significa %3$s</string>
+
+    <string name="settings_title">Ajustes de Kanji Time</string>
+    <string name="interval_label">Intervalo de actualización</string>
+    <string name="interval_1h">Cada hora</string>
+    <string name="interval_2h">Cada 2 horas</string>
+    <string name="interval_6h">Cada 6 horas</string>
+    <string name="interval_12h">Cada 12 horas</string>
+    <string name="interval_24h">Cada 24 horas</string>
+    <string name="language_label">Idioma</string>
+    <string name="language_english">Inglés</string>
+    <string name="language_spanish">Español</string>
+    <string name="language_note">El cambio del idioma del significado llegará con los datos en español en una futura actualización.</string>
+</resources>

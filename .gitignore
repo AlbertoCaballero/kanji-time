@@ -1,0 +1,16 @@
+# Gradle
+.gradle/
+build/
+
+# Local configuration (machine-specific)
+local.properties
+
+# IDE
+.idea/
+*.iml
+captures/
+.externalNativeBuild/
+.cxx/
+
+# OS
+.DS_Store

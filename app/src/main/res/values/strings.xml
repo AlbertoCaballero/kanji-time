@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Kanji Time</string>
+    <string name="widget_name">Kanji Time</string>
+    <string name="widget_description">Shows a kanji, its reading and meaning.</string>
+    <string name="widget_kanji_description">%1$s, pronounced %2$s, meaning %3$s</string>
+
+    <string name="settings_title">Kanji Time settings</string>
+    <string name="interval_label">Update interval</string>
+    <string name="interval_1h">Every hour</string>
+    <string name="interval_2h">Every 2 hours</string>
+    <string name="interval_6h">Every 6 hours</string>
+    <string name="interval_12h">Every 12 hours</string>
+    <string name="interval_24h">Every 24 hours</string>
+    <string name="language_label">Language</string>
+    <string name="language_english">English</string>
+    <string name="language_spanish">Spanish</string>
+    <string name="language_note">Meaning language switching will arrive with Spanish data in a future update.</string>
+</resources>
